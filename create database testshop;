@@ -1,0 +1,66 @@
+create database testshop;
+use testshop;
+
+CREATE TABLE users  (user_id  varchar(255),full_name varchar(255), password  varchar(255),email varchar(255));
+
+CREATE TABLE `Products` (
+  `p_id` varchar(11) NOT NULL,
+  `title` varchar(2550) default NULL,
+  `price` varchar(11) default NULL,
+  `image` varchar(255) default NULL,
+  `short_desc` varchar(100) default NULL,
+  `Color` varchar(255) default NULL,
+  `quantity` int default NULL,
+   `images` varchar(2550) default NULL,
+   PRIMARY KEY (`p_id`));
+
+ INSERT INTO `Products` (`p_id`,`title`,`price`,`image`,`short_desc`,`Color`,`quantity`,`images`) VALUES 
+ (1,"Lotion","1000","https://media.istockphoto.com/photos/journalist-holding-camera-taking-shots-for-report-paparazzi-spying-on-picture-id1144494233?k=20&m=1144494233&s=612x612&w=0&h=ZRxZG5yx0LlZDIpezDaDyytMA5wLyIuPFFiwEtcl7Mo=","Product 1","yellow",109,"https://media.istockphoto.com/photos/journalist-holding-camera-taking-shots-for-report-paparazzi-spying-on-picture-id1144494233?k=20&m=1144494233&s=612x612&w=0&h=ZRxZG5yx0LlZDIpezDaDyytMA5wLyIuPFFiwEtcl7Mo=,https://media.istockphoto.com/photos/large-lens-in-the-camera-of-a-man-picture-id841301326?k=20&m=841301326&s=612x612&w=0&h=Em03WlvO43_sIJamlzR34i_Uk2vmj9SiePW2HXL5PlM="),
+
+
+(2,"Lotion","1000","Hair","Product 1","yellow",109,"Images 1"),
+(3,"Remover","2000","Lip","Product 2","green",898,"Images 1"),
+(4,"Beauty","3000","Face"," Product 3","red",271,"Images 1"),
+(5,"Beauty","4000","Cheek","Product 4","red",551,"Images 1"),
+(6,"Sets","5000","Cheek","Product 5","red",514,"Images 1"),
+(7,"Lotion","6000","Eye, Face","Product 6","green",794,"Images 1"),
+(8,"Shampoo","7000","Body, Hair","Product 7","yellow",916,"Images 1"),
+(9,"Moisturizer","777","Lip","Product 8","blue",162,"Images 1"),
+(10,"Sets","999","","Product 9","orange",827,"Images 1"),
+(11,"Primer","499","","Product 10","red",464,"Images 1"),
+(12,"Primer","499","https://images.unsplash.com/photo-1638518827554-972f6ed6d645?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1601&q=80","Food item","red",464,"Images 1"),
+(13,"Primer","499","https://images.unsplash.com/photo-1533709752211-118fcaf03312?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80","Food item","red",464,"Images 1"),
+(16,"Primer","499","https://images.unsplash.com/photo-1533709752211-118fcaf03312?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80","Food item","red",464,"Images 1");
+
+
+create table categories (c_id int, title varchar(255));
+
+insert into categories (c_id,title) values (1,"Laptops");
+insert into categories (c_id,title) values (2,"Laptops");
+insert into categories (c_id,title) values (3,"Laptops");
+insert into categories (c_id,title) values (4,"Laptops");
+insert into categories (c_id,title) values (5,"Laptops");
+insert into categories (c_id,title) values (6,"Accessories");
+insert into categories (c_id,title) values (7,"Accessories");
+insert into categories (c_id,title) values (8,"Accessories");
+insert into categories (c_id,title) values (9,"Cameras");
+insert into categories (c_id,title) values (10,"Cameras");
+insert into categories (c_id,title) values (11,"Cameras");
+insert into categories (c_id,title) values (12,"Cameras");
+insert into categories (c_id,title) values (13,"Cameras");
+insert into categories (c_id,title) values (14,"Cameras");
+insert into categories (c_id,title) values (16,"Cameras");
+
+
+
+create table order_details (order_id varchar(255), p_id int, quantity int);
+
+create table orders (o_id varchar(255),user_id int);
+insert into orders(o_id,user_id) values ("1123",1);
+insert into orders(o_id,user_id) values ("1212",1);
+
+SET SQL_SAFE_UPDATES = 0;
+UPDATE users SET user_id= 111 WHERE email = "nikhil992gupta@gmail.com";
+
+SELECT * FROM orders INNER JOIN order_details ON ( orders.o_id = order_details.order_id ) WHERE user_id = 1;
+iNSERT INTO order_details (order_id, p_id, quantity) VALUES (1212,12,10);
