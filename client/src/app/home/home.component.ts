@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       this.productService.getAllProducts(12, this.productPageCounter).subscribe(
         (res: any) => {
-          console.log(res);
+          console.log("getAllProducts",res);
           this.products = res;
           this.loading = false;
         },

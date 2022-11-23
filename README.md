@@ -64,9 +64,8 @@ You will need to have node and npm installed. In addition you will need a MySQL 
 
 ## Environment Variables
 
-Create a folder called env in the root of the backend directory and create a development.env file.
+Creating a folder called env in the root of the backend directory and create a development.env file.
 
-**Change DB variables to match your MySQL setup**
 
 ```
 PORT=5000

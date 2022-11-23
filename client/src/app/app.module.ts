@@ -37,6 +37,9 @@ import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzTableModule } from 'ng-zorro-antd/table';
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AdminComponent } from './admin/admin.component';
+import { AllOrdersComponent } from './all-orders/all-orders.component';
+import { EditProductsComponent } from './edit-products/edit-products.component';
 
 registerLocaleData(en);
 
@@ -54,6 +57,9 @@ registerLocaleData(en);
     HeaderComponent,
     FooterComponent,
     ProductCardComponent,
+    AdminComponent,
+    AllOrdersComponent,
+    EditProductsComponent,
   ],
   imports: [
     BrowserModule,

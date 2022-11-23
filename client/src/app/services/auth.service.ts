@@ -23,6 +23,7 @@ export class AuthService {
   }
 
   login(credentials: any): Observable<any> {
+    console.log("credentials",credentials);
     return this._api
       .postTypeRequest('auth/login', {
         email: credentials.email,
@@ -30,15 +31,19 @@ export class AuthService {
       })
       .pipe(
         map((res: any) => {
+          console.log("res login",res);
           let user = {
             email: credentials.email,
-             user_id:res.data[0].user_id,
+            user_id:res.data[0].user_id,
+            isAdmin:res.data[0].isAdmin,
             token: res.token,
+
           };
           this._token.setToken(res.token);
           this._token.setUser(res.data[0]);
           console.log(res);
           console.log("USERID",res.data[0].user_id);
+          console.log("isadmin",res.data[0].isAdmin);
           console.log(user);
           this.userSubject.next(user);
           return user;

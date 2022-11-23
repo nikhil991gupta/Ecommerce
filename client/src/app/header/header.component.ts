@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   screenWidth: any;
   isMenuOpen = false;
   isMobile = false;
+  isAdmin=false;
   isLoggedIn = false;
   dropdownVisible = false;
   cartData: any;
@@ -34,7 +35,17 @@ export class HeaderComponent implements OnInit {
   ) {
     this.getScreenSize();
     this._auth.user.subscribe((user) => {
-      if (user) this.isLoggedIn = true;
+      if (user) {
+        this.isLoggedIn = true;
+        if(user.isAdmin==null)
+        {
+          this.isAdmin=false;
+        }
+        else{
+          this.isAdmin=true;
+        }
+        console.log("hihjhg",this.isAdmin);
+      }
       else this.isLoggedIn = false;
     });
     this._cart.cartDataObs$.subscribe((cartData) => {

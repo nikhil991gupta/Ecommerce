@@ -146,10 +146,16 @@
     <nav>
       <ul>
         <li routerLink="/" (click)="toggleMenu()">Home</li>
-        <li routerLink="/cart" (click)="toggleMenu()">Cart</li>
+        <li *ngIf="!isAdmin" routerLink="/cart" (click)="toggleMenu()">Cart</li>
         <li routerLink="/profile" (click)="toggleMenu()">Profile</li>
-        <li routerLink="/order-history" (click)="toggleMenu()">
+        <li *ngIf="!isAdmin" routerLink="/order-history" (click)="toggleMenu()">
           Order History
+        </li>
+        <li *ngIf="isAdmin" routerLink="/edit-products" (click)="toggleMenu()">
+          Edit Products
+        </li>
+        <li *ngIf="isAdmin" routerLink="/all-orders" (click)="toggleMenu()">
+          All orders
         </li>
       </ul>
     </nav>

@@ -127,3 +127,25 @@ exports.getOrders = async (params) => {
     );
   });
 };
+
+exports.allOrders = async (params) => {
+  const Checkingvalue = params;
+  console.log("allorders",Checkingvalue);
+  if (!userId) throw { message: "userId was not provided", statusCode: 400 };
+  return new Promise((resolve, reject) => {
+    db.query(
+      `SELECT * FROM orders`,
+      (err, result) => {
+        if (err) reject({ message: err, statusCode: 500 });
+        console.log(result);
+        if (result.length === 0)
+          reject({ message: "No order were found", statusCode: 400 });
+        resolve({
+          statusCode: 200,
+          message: `${result.length} orders were found`,
+          data: result,
+        });
+      }
+    );
+  });
+};

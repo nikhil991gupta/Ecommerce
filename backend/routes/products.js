@@ -23,7 +23,10 @@ router.get("/", async (req, res) => {
             c.c_id = p.p_id LIMIT ${startValue}, ${limit}`,
     (err, results) => {
       if (err) console.log(err);
-      else res.json(results);
+      else {
+        console.log("Get all backend",results);
+        res.json(results);
+      }
     }
   );
 });

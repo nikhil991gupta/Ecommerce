@@ -70,7 +70,7 @@ export class ProductComponent implements OnInit {
           else this.quantity = 1;
 
           if (product.images) {
-            this.showcaseImages = product.images.split(';');
+            this.showcaseImages = product.images.split(',');
           }
           this.loading = false;
         });

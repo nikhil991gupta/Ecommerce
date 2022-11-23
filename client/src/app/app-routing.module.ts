@@ -5,6 +5,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import {EditProductsComponent} from './edit-products/edit-products.component';
+import {AllOrdersComponent} from './all-orders/all-orders.component';
 import { ProductComponent } from './product/product.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './auth/components/register/register.component';
@@ -29,6 +31,16 @@ const routes: Routes = [
   {
     path: 'order-history',
     component: OrderHistoryComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'all-orders',
+    component: AllOrdersComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'edit-products',
+    component: EditProductsComponent,
     canActivate: [AuthGuardService],
   },
 ];

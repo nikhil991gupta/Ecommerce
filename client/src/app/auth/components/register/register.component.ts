@@ -56,7 +56,6 @@ export class RegisterComponent implements OnInit {
   }
 
   canSubmit(): boolean {
-    console.log("uuuuuuu",this.user_id)
     return this.fullName && this.email && this.password && this.confirmPassword && this.user_id
       ? true
       : false;
