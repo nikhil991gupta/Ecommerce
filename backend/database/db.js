@@ -10,7 +10,7 @@ const mysql = require("mysql2");
 // connection.connect((err) => {
 //   if (err) console.log(err);
 //   else console.log("MySQL is connected...");
-// });
+// }); 
 
 // module.exports = connection;
 
